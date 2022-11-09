@@ -1,18 +1,17 @@
-let id = (id) => document.getElementById(id);
+const getId = (id) => document.getElementById(id);
 
-let classes = (classes) => document.querySelectorAll(classes);
+const getClasses = (classes) => document.querySelectorAll(classes);
 
-let username = id("username"),
-  email = id("email"),
-  password = id("password"),
-  form = id("form"),
-  errorMsg = classes(".error"),
-  successIcon = classes(".success-icon"),
-  failureIcon = classes(".failure-icon");
+const username = getId("username"),
+  email = getId("email"),
+  password = getId("password"),
+  form = getId("form"),
+  errorMsg = getClasses(".error"),
+  successIcon = getClasses(".success-icon"),
+  failureIcon = getClasses(".failure-icon");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-
   engine(username, 0, "Username cannot be blank");
   engine(email, 1, "Email cannot be blank");
   engine(password, 2, "Password cannot be blank");
